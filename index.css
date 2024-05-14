@@ -17,13 +17,11 @@ body {
 }
 
 main {
-  border: 4px solid black;
   max-width: 468px;
   margin: 0 auto;
 }
 
 .card {
-  border: 1px solid orange;
   padding: 3rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -56,12 +54,14 @@ main {
 }
 
 .card > h2 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 600;
+  position: relative;
+  z-index: 100;
 }
 
 .card > p {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 300;
 }
 
@@ -76,6 +76,27 @@ main {
   background-color: var(--Moderate-violet);
   color: var(--White);
 }
+.clifford > div > img:first-child {
+  border: 4px solid rgb(167, 117, 242);
+}
+.clifford > div > img:last-child {
+  border-radius: 0;
+  position: absolute;
+  transform: translate(220px, 14px);
+
+  width: 160px !important;
+  height: 160px !important;  
+}
+/*
+.bg {
+  border-radius: 0;
+  position: absolute;
+  transform: translate(220px, 14px);
+
+  width: 160px !important;
+  height: 160px !important;  
+}
+*/
 .walters {
   background-color: var(--Very-dark-grayish-blue);
   color: var(--White);
@@ -90,14 +111,53 @@ main {
   background-color: var(--Very-dark-blackish-blue);
   color: var(--White);
 }
+.abrams > div > img {
+  border: 4px solid var(--Moderate-violet);
+}
 .whittle {
   background-color: var(--White);
   color: var(--Very-dark-blackish-blue);
 }
 
 @media (min-width: 1440px) {
-  body {
-    background-color: yellow;
+
+  main {
+    max-width: 1440px;
+  
+    display: grid;
+    grid-template-columns: repeat(5, 360px);
+    grid-template-rows: repeat(2, 380px);
+    
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .clifford > div > img:last-child {
+    border-radius: 0;
+    position: absolute;
+    transform: translate(400px, 14px);
+
+    width: 160px !important;
+    height: 160px !important;  
+  }
+
+  .clifford {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .walters {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  .harmon {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .abrams {
+    grid-area: 2 / 2 / 3 / 4;
+  }
+
+  .whittle {
+    grid-area: 1 / 4 / 3 / 5;
   }
 }
 
